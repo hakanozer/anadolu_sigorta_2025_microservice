@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient(value = "product", path = "product")
 public interface ProductClient {
 
-    @GetMapping("getOne/{pid}")
+    @GetMapping("getOn/{pid}")
     Product getOne(@PathVariable Long pid);
 
     @PostMapping("save")

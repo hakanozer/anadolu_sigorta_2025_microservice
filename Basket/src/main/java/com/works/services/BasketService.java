@@ -20,6 +20,7 @@ public class BasketService {
     // final DiscoveryClient discoveryClient;
     final ProductClient productClient;
     final CircuitBreakerFactory circuitBreakerFactory;
+    final CircuitBreakerFactory globalCircuitBreakerFactory;
 
     public Product singleProduct( Long pid  ) {
         /*
@@ -35,6 +36,7 @@ public class BasketService {
         return null;
          */
         CircuitBreaker circuitBreaker = circuitBreakerFactory.create("productBreaker");
+        CircuitBreaker globalCircuitBreaker = globalCircuitBreakerFactory.create("globalCircuitBreaker");
         return circuitBreaker.run(
                 () -> productClient.getOne(pid),
                 throwable -> fallBack(pid)
@@ -42,7 +44,10 @@ public class BasketService {
     }
 
     public Product fallBack( Long pid ) {
-        return null;
+        Product product = new Product();
+        product.setPid(pid);
+        product.setTitle("No Title");
+        return product;
     }
 
 }
