@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "edb13e3a-e1b0-42ee-ad35-43db3c50f139",
+		"name": "Anadolu Sigorta - 2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1939021"
+	},
+	"item": [
+		{
+			"name": "Product Save",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "zehra",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Masa-1\",\n    \"description\": \"Masa-1 Detail\",\n    \"price\": 58.600\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1010/product/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1010",
+					"path": [
+						"product",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product List",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "ali",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1010/product/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1010",
+					"path": [
+						"product",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Product Get One",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1010/product/getOne/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1010",
+					"path": [
+						"product",
+						"getOne",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basket Single",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "veli",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1010/basket/single/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1010",
+					"path": [
+						"basket",
+						"single",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Basket Post",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "zehra",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1010/basket/post/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1010",
+					"path": [
+						"basket",
+						"post",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "encrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "sa",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2020/encrypt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2020",
+					"path": [
+						"encrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "decrypt",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "122edb47e27e6291b76a715c7dd7b4ee0d66b74e63a0ea7d006c1d2f3bc2a42e",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:2020/decrypt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2020",
+					"path": [
+						"decrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Customer Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"zehra\",\n    \"password\": \"12345\",\n    \"enabled\": true,\n    \"roles\": [\n        { \"rid\": 1 },\n        { \"rid\": 2 }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1010/customer/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1010",
+					"path": [
+						"customer",
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
